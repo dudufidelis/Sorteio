@@ -1,3 +1,15 @@
+@keyframes balloonAnimation {
+    0%, 100% {
+        transform: translateX(0) rotate(0deg) scale(1);
+    }
+    25% {
+        transform: translateX(-10px) rotate(-15deg) scale(1.05);
+    }
+    75% {
+        transform: translateX(10px) rotate(15deg) scale(1.05);
+    }
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -37,14 +49,6 @@ body {
     gap: 25px;
 }
 
-.item:nth-child(odd) {
-    background-color: yellow;
-}
-
-.item:nth-child(even) {
-    background-color: rgb(255, 217, 0);
-}
-
 .item {
     display: flex;
     justify-content: center;
@@ -53,8 +57,23 @@ body {
     padding: 10px;
     width: 150px;
     height: 150px;
-    border-radius: 5px;
-    box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.068);
+}
+
+.balloon {
+    width: 100px;
+    height: 120px;
+    animation: balloonAnimation 5s ease-in-out infinite;
+    transform-origin: bottom center;
+    cursor: pointer;
+}
+
+.none {
+    display: none;
+}
+
+.reward {
+    position: absolute;
+    font-size: 20px;
 }
 
 .selected {
