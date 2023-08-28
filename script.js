@@ -1,22 +1,16 @@
-const balloons = document.querySelectorAll('.balloon');
+let items = ["premio1", "premio2", "premio3"]
 
-const item = "desorante"
+const balloons = document.querySelectorAll('.balloon');
+const item = Math.floor(Math.random(max, min) * items.length)
 
 balloons.forEach((balloon) => {
     balloon.addEventListener('click', (event) => {
         balloon.classList.add('none');
-        appearReward()    
+        appearReward(balloon);
     });
 });
 
-function appearReward() {
-    const rewards = document.querySelectorAll('.reward');
-    
-    rewards.forEach((reward) => {
-        reward.innerHTML = item; 
-    });
+function appearReward(balloon) {
+    const reward = balloon.nextElementSibling;
+    reward.innerHTML = items[item];
 }
-
-
-
-
