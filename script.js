@@ -1,7 +1,9 @@
-let items = ["premio1", "premio2", "premio3"]
+let items = [
+    "Bombom", "Io-Io", "Relogio", "Garrafa", "Jogo de Panela",
+    "Perfume", "Pulseira", "Chaveiro"
+];
 
 const balloons = document.querySelectorAll('.balloon');
-const item = Math.floor(Math.random(max, min) * items.length)
 
 balloons.forEach((balloon) => {
     balloon.addEventListener('click', (event) => {
@@ -12,5 +14,6 @@ balloons.forEach((balloon) => {
 
 function appearReward(balloon) {
     const reward = balloon.nextElementSibling;
+    const item = Math.floor(Math.random() * items.length);
     reward.innerHTML = items[item];
 }
